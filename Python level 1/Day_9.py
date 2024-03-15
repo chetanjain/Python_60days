@@ -6,13 +6,13 @@ while True:
     if user_action.startswith("add"):
         todo = user_action[4:].strip()
         # with command helps to remove closing the file
-        with open("todo.txt", 'r') as file:
+        with open("../todo.txt", 'r') as file:
             todos = file.readlines()
         todos.append(todo+"\n")
-        with open("todo.txt", 'w') as file:  # r-> read, w-> write , a-> append
+        with open("../todo.txt", 'w') as file:  # r-> read, w-> write , a-> append
             file.writelines(todos)
     elif user_action.startswith("show"):
-        with open("todo.txt", 'r') as file:
+        with open("../todo.txt", 'r') as file:
             todos = file.readlines()
         # print("todos : ", todos)
         # option 1 ------------------------------------------------------
@@ -31,13 +31,13 @@ while True:
         try:
             number = int(user_action[5:])
 
-            with open("todo.txt", 'r') as file:
+            with open("../todo.txt", 'r') as file:
                 todos = file.readlines()
             print(todos)
             # number = int(input("Number of todo to edit? : "))
             string = input("Enter the new todo for index :")
             todos[number - 1] = string + "\n"
-            with open('todo.txt', 'w') as file:
+            with open('../todo.txt', 'w') as file:
                 file.writelines(todos)
         except ValueError:
             print("Your command is not valid")
@@ -46,14 +46,14 @@ while True:
     elif user_action.startswith("complete"):  # modify the list, if user choose complete
         try:
             number = int(user_action.replace('complete', '').strip())
-            with open("todo.txt", 'r') as file:
+            with open("../todo.txt", 'r') as file:
                 todos = file.readlines()
             # remove() is used to remove by value
             # pop is used to remove by index
             # number = int(input("Number of the todo to complete/remove"))
             todos.pop(number - 1)
             print(f"new todos: {todos}")
-            with open("todo.txt", 'w') as file:
+            with open("../todo.txt", 'w') as file:
                 file.writelines(todos)
         except IndexError:
             print("Please enter a valid index")

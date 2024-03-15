@@ -7,11 +7,11 @@ while True:
         case 'add':
             todo = input("Enter a todo:").strip() + "\n"
             todos.append(todo)
-            file = open('todo.txt', mode='a')  # r-> read, w-> write , a-> append
+            file = open('../todo.txt', mode='a')  # r-> read, w-> write , a-> append
             file.writelines(todo)
             file.close()
         case 'show':
-            file = open('todo.txt', 'r')
+            file = open('../todo.txt', 'r')
             todos = file.readlines()
             file.close()
             print("todos : ", todos)    

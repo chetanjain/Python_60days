@@ -8,7 +8,7 @@
 # with open("file.txt",'w') as file:
 #     file.write(ls)
 
-with open('file.txt') as file:
+with open('../file.txt') as file:
     # print(file.read())
     # print(len(file.read())) # this will give 0 as output because file.read put the cursor at the end.
     # Since the cursor is at end so length will be 0
