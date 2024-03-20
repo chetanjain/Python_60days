@@ -8,7 +8,7 @@ def get_todos(filepath='todo.txt'):
         return file1.readlines()
 
 
-def write_todos(todos_arg, filepath='todos.txt'):
+def write_todos(todos_arg, filepath='todo.txt'):
     """
     :param todos_arg:
     :param filepath:
@@ -18,7 +18,7 @@ def write_todos(todos_arg, filepath='todos.txt'):
         file1.writelines(todos_arg)
 
 
-print(__name__)
+print(__name__,"hel")
 if __name__ == "__main__":  # __name__ is variable which has default value as __main__
     # this __main__ value comes if you directly execute the current python file.
     print("Hello from functions")
